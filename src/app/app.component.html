@@ -2,6 +2,9 @@
   <h1 class="center-align">
     {{title}}
   </h1>
+
+  <autocomplete></autocomplete>
+  <br>
   <input type=text name="todo" id="todo" placeholder="What needs to be done?"
          [(ngModel)]="inputText">
   <button *ngIf="!edit" (click)="addTodo()" class="waves-effect waves-light btn">Add</button>

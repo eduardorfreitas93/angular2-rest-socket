@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef} from '@angular/core';
 
 import {RestService} from "./services/rest.service";
 import {ChatService} from './services/chat.service';

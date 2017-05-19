@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdAutocompleteModule, MdInputModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 
 import {RestangularModule} from 'ngx-restangular';
 import {RestService} from "./services/rest.service";
@@ -20,13 +23,18 @@ export function restangular (RestangularProvider) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AutocompleteComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RestangularModule.forRoot(restangular),
+    BrowserAnimationsModule,
+    MdAutocompleteModule,
+    MdInputModule
   ],
   providers: [RestService],
   bootstrap: [AppComponent]
